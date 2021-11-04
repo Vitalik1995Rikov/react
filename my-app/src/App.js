@@ -2,13 +2,22 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const counterState = useState(0);
+  const [counter, setCounter] = useState(0);
+
+  function increment() {
+    setCounter(counter + 1)
+  }
+
+  function decrement() {
+    setCounter(counter - 1)
+  }
+
 
   return (
     <div className="App">
-      <h1>Count</h1>
-      <button>Add</button>
-      <button>Remove</button>
+      <h1>Count {counter}</h1>
+      <button onClick={increment}>Add</button>
+      <button onClick={decrement}>Remove</button>
     </div>
   );
 }
