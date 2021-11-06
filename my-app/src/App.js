@@ -4,6 +4,11 @@ import {useState} from 'react';
 function App() {
   const [counter, setCounter] = useState(0);
 
+  const [state, setState] = useState({
+    title: 'Cчетчик',
+    data: Date.now()
+  })
+
   function increment() {
     setCounter(counter + 1)
   }
@@ -18,6 +23,8 @@ function App() {
       <h1>Count {counter}</h1>
       <button onClick={increment}>Add</button>
       <button onClick={decrement}>Remove</button>
+
+      <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
   );
 }
