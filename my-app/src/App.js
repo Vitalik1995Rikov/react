@@ -17,13 +17,22 @@ function App() {
     setCounter(counter - 1)
   }
 
+  function updateTitle() {
+    setState(prev => {
+      return {
+        ...prev, 
+        title: 'Новое название'
+    }
+    })
+  }
+
 
   return (
     <div className="App">
       <h1>Count {counter}</h1>
       <button onClick={increment}>Add</button>
       <button onClick={decrement}>Remove</button>
-      <button onClick={() => setState({title: 'Новое название'})}>Изменить название</button>
+      <button onClick={updateTitle}>Изменить название</button>
 
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
