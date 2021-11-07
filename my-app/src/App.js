@@ -23,6 +23,7 @@ function App() {
       <h1>Count {counter}</h1>
       <button onClick={increment}>Add</button>
       <button onClick={decrement}>Remove</button>
+      <button onClick={() => setState({title: 'Новое название'})}>Изменить название</button>
 
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
