@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
+import MarvelService from './services/MarvelService';
 
 class RandomChar extends Component {
     state = {
@@ -10,6 +11,14 @@ class RandomChar extends Component {
         homepage: null,
         wiki: null
     }
+
+    marvelService = new MarvelService();
+
+    updateChar = () => {
+        this.MarvelService
+            .getCharacter(id)
+    }
+
     render() {
         const {name, description, thumbnail, homepage, wiki} = this.state;
         return (
